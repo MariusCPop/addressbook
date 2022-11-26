@@ -101,11 +101,11 @@
 			    <scope>provided</scope>
 		</dependency>
 		
-<!-- might be in conflict with aboive dependency-->
+<!-- might be in conflict with aboive dependency
 		<dependency>
 			    <groupId>org.springframework.boot</groupId>
 			    <artifactId>spring-boot-starter-thymeleaf</artifactId>
-		</dependency>
+		</dependency>-->
 		
 <!-- next 2 dependencies help process dynamic information-->	
 		<dependency>
