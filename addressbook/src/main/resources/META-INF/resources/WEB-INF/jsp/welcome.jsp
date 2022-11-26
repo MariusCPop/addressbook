@@ -1,29 +1,25 @@
-<%@ include file="common/header.jspf" %>
-<%@ include file="common/navigation.jspf" %>
-    <title>Address Book - Welcome</title>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Create an account</title>
+    <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<div class="container">
-  <div
-    class="p-5 text-center bg-image"
-    style="
-      background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/041.webp');
-      height: 400px;
-    "
-  >
-    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
-      <div class="d-flex justify-content-center align-items-center h-100">
-        <div class="text-white">
-          <h3 class="mb-3">Welcome ${name},</h3>
-          <h4 class="mb-3">to your address book</h4>
-          <a class="btn btn-outline-light btn-lg" href="list-contacts" role="button"
-          >Manage contacts</a
-          >
-        </div>
-      </div>
-    </div>
+  <div class="container">
+    <c:if test="${pageContext.request.userPrincipal.name != null}">
+        <form id="logoutForm" method="POST" action="${contextPath}/logout">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        </form>
+
+        <h2>Welcome ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()">Logout</a></h2>
+    </c:if>
   </div>
-  </div>
-  <!-- Background image -->
- 	
-<%@ include file="common/footer.jspf" %>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="${contextPath}/resources/js/bootstrap.min.js"></script>
+</body>
+</html>

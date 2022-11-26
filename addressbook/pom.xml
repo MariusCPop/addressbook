@@ -126,6 +126,12 @@
 			    <version>1.8</version>
 		</dependency>
 		
+		<!-- dependency to solve isssue with web configuration-->
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-core</artifactId>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
