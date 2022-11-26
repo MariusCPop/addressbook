@@ -102,6 +102,7 @@
 		</dependency>
 		
 <!-- Thymeleaf is in conflict with tomcat.embed. One of these deependencies needs to be commented
+
 		<dependency>
 			    <groupId>org.springframework.boot</groupId>
 			    <artifactId>spring-boot-starter-thymeleaf</artifactId>
