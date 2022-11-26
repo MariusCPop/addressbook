@@ -101,11 +101,11 @@
 			    <scope>provided</scope>
 		</dependency>
 		
-<!-- might be in conflict with aboive dependency-->
+<!-- Thymeleaf is in conflict with tomcat.embed. One of these deependencies needs to be commented
 		<dependency>
 			    <groupId>org.springframework.boot</groupId>
 			    <artifactId>spring-boot-starter-thymeleaf</artifactId>
-		</dependency>
+		</dependency>-->
 		
 <!-- next 2 dependencies help process dynamic information-->	
 		<dependency>
