@@ -47,9 +47,13 @@ public class ContactControllerJpa {
 	@RequestMapping("list-contacts")
 	public String listAllContacts(ModelMap model){
 		String userName = getLoggedInUsername(model);
-		
-		List<Contact> contacts = contactRepository.findByUserName(userName);
-		model.addAttribute("contacts",contacts);
+		if (userName=="anonymousUser") {
+			List<Contact> contacts = contactRepository.findAll();
+			model.addAttribute("contacts",contacts);
+		} else {
+			List<Contact> contacts = contactRepository.findByUserName(userName);
+			model.addAttribute("contacts",contacts);
+		}	
 		return "listContacts";
 	}
 	

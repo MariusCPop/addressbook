@@ -44,10 +44,26 @@ private UserDetails createNewUser(String username, String password) {
 	
 	@Bean 
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
-		http.authorizeHttpRequests(auth -> auth.anyRequest().authenticated());
+		
+		http.authorizeHttpRequests(authorize -> authorize
+				.requestMatchers("/**").permitAll()
+				.requestMatchers("/delete-contact").authenticated()
+				.anyRequest().denyAll()
+		);
+		
+//		http.authorizeHttpRequests(auth -> auth
+//				.requestMatchers("/**").permitAll()
+//				.requestMatchers("/add-contacts/**").authenticated());
+				
+//				.requestMatchers("/list-contacts/*","welcome").permitAll()
+//				.anyRequest().authenticated());
+		
+//		http.authorizeHttpRequests(auth -> auth.anyRequest().authenticated());
+		
 		http.formLogin(withDefaults());
 		
 		http.csrf().disable();
+		
 		http.headers().frameOptions().disable();
 		
 		return http.build();
