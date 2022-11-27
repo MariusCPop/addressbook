@@ -16,6 +16,7 @@ public class WelcomeController {
 	public String goToWelcomePage(ModelMap model) {
 		model.put("name",getLoggedInUserName());
 		return "welcome";
+//		return "welcome"; trying out thymeleaf
 	}
 	
 	private String getLoggedInUserName() {
