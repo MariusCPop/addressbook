@@ -94,19 +94,20 @@
 		    <version>3.6.0</version>
 		</dependency>
 		
-<!-- helps with link mapping - requestmapping-->
+<!-- helps with link mapping - requestmapping
 		<dependency>
 			    <groupId>org.apache.tomcat.embed</groupId>
 			    <artifactId>tomcat-embed-jasper</artifactId>
 			    <scope>provided</scope>
 		</dependency>
+		-->
 		
-<!-- Thymeleaf is in conflict with tomcat.embed. One of these deependencies needs to be commented
+<!-- Thymeleaf is in conflict with tomcat.embed. One of these deependencies needs to be commented-->
 
 		<dependency>
 			    <groupId>org.springframework.boot</groupId>
 			    <artifactId>spring-boot-starter-thymeleaf</artifactId>
-		</dependency>-->
+		</dependency>
 		
 <!-- next 2 dependencies help process dynamic information-->	
 		<dependency>
